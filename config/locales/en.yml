@@ -108,3 +108,8 @@ en:
   submit_csv_file: "Submit the CSV word file"
   import_successfull_message: "Import file successful"
   admin_permition_failed_message: "Not admin permition"
+  update_category: "Update category"
+  update_successfull_message: "Update successful"
+  update_failed_message: "Update failed"
+  add_category_button: "Create new category"
+
