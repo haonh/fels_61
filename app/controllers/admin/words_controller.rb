@@ -1,6 +1,8 @@
 class Admin::WordsController < ApplicationController
   before_action :init_word, only: [:edit, :update, :destroy]
-
+  before_action :logged_in_user
+  before_action :admin_user 
+  
   def index
     respond_to do |format|
       format.html do

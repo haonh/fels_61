@@ -1,6 +1,8 @@
 class Admin::UsersController < ApplicationController
   before_action :init_user, only: [:show, :edit, :update, :destroy]
-
+  before_action :logged_in_user
+  before_action :admin_user 
+  
   def index
     @users = User.paginate page:params[:id], per_page: Settings.paginate_per_page
   end

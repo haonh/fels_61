@@ -104,3 +104,4 @@ en:
   import_csv_file: "Import a csv word file"
   submit_csv_file: "Submit the CSV word file"
   import_successfull_message: "Import file successful"
+  admin_permition_failed_message: "Not admin permition"
