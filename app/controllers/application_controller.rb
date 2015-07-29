@@ -12,4 +12,11 @@ class ApplicationController < ActionController::Base
       redirect_to login_url
     end
   end
+
+  def admin_user
+    unless current_user.admin?
+      flash[:danger] = t "admin_permition_failed_message"
+      redirect_to login_url
+    end
+  end
 end

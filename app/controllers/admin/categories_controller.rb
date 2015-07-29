@@ -1,4 +1,6 @@
 class Admin::CategoriesController < ApplicationController
+  before_action :logged_in_user
+  before_action :admin_user 
   before_action :init_category, except: [:new, :index, :create]
 
   def index
