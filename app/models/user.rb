@@ -18,6 +18,8 @@ class User < ActiveRecord::Base
   has_many :followers, through: :passive_relationships, source: :follower
   has_many :lessons, dependent: :destroy
   has_many :activities, dependent: :destroy
+  extend FriendlyId
+  friendly_id :name, use: [:slugged, :history]
 
   def User.digest string
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
@@ -60,6 +62,10 @@ class User < ActiveRecord::Base
       WHERE  follower_id = :user_id"
     Activity.where("user_id IN (#{following_ids})
       OR user_id = :user_id", user_id: id)
+  end
+
+  def to_param
+    "#{id} #{name}".parameterize
   end
 
   private

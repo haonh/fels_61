@@ -13,6 +13,9 @@ class UsersController < ApplicationController
 
   def show
     @activities_feed = @user.activities.recent.paginate page: params[:page]
+    if request.path != user_path(@user)
+      redirect_to @user, status: :moved_permanently
+    end
   end
 
   def create

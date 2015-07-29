@@ -8,8 +8,15 @@
       </h3>     
       <section class="stats">
         <%= render "shared/stats" %>
+        <b><%= t("static_pages.learned", number_word: @results.count) %></b>
       </section>
     </aside>
+    <div class="col-md-6 stylebutton" >
+      <%= link_to t("static_pages.word"), words_path,
+        class: "action-button shadow animate blue" %>
+      <%= link_to t("static_pages.lesson"), categories_path,
+        class: "action-button shadow animate red" %>
+    </div>
     <%= render "shared/feed" %>
   <% else %>
     <div class="center jumbotron">
