@@ -108,3 +108,6 @@ en:
   submit_csv_file: "Submit the CSV word file"
   import_successfull_message: "Import file successful"
   admin_permition_failed_message: "Not admin permition"
+  manage_user: "Manage user"
+  manage_category: "Manage category"
+  manage_word: "Manage word"
