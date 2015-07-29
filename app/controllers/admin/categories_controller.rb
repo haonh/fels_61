@@ -11,17 +11,28 @@ class Admin::CategoriesController < ApplicationController
   def create
     @category = Category.new category_params
     if @category.save
-      flash[:success] = t "create_category_success_message"
+      respond_to do |format|
+        format.html do
+          flash[:success] = t "create_category_success_message"
+          redirect_to admin_categories_path
+        end
+        format.js
+      end
     else
       flash[:success] = t "create_category_failed_message"
+      render :index
     end
-    redirect_to admin_categories_path
   end
   
   def destroy
     if @category.destroy
-      flash[:success] = t "destroy_category_success_message"
-      redirect_to admin_categories_path
+      respond_to do |format|
+        format.html do
+          flash[:success] = t "destroy_category_success_message"
+          redirect_to admin_categories_path
+        end
+        format.js
+      end
     else
       flash[:success] = t "destroy_category_unsuccess_message"
       redirect_to admin_categories_path
