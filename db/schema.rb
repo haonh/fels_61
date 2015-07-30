@@ -16,7 +16,6 @@ ActiveRecord::Schema.define(version: 20150729041726) do
   create_table "activities", force: :cascade do |t|
     t.datetime "time"
     t.string   "content"
-    t.integer  "content_id"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

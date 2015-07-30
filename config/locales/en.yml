@@ -112,4 +112,6 @@ en:
   update_successfull_message: "Update successful"
   update_failed_message: "Update failed"
   add_category_button: "Create new category"
-
+  manage_user: "Manage user"
+  manage_category: "Manage category"
+  manage_word: "Manage word"
