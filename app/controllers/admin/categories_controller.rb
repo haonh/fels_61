@@ -8,6 +8,19 @@ class Admin::CategoriesController < ApplicationController
     @category = Category.new
   end
 
+  def edit   
+  end
+
+  def update
+    if @category.update category_params
+      flash[:success] = t "update_successfull_message"
+      redirect_to admin_categories_path
+    else
+      flash.now[:danger] = t "update_failed_message"
+      render :edit
+    end
+  end
+
   def create
     @category = Category.new category_params
     if @category.save

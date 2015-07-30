@@ -5,6 +5,7 @@
         <tr>
           <th><%= t("category").capitalize %></th>
           <th><%= t("description").capitalize %></th>
+          <th><%= t("num_of_words").capitalize %></th>
           <th><%= t("tool").capitalize %></th>
         </tr>
         <%= render @categories %>
@@ -23,7 +24,7 @@
           <%= f.label :description %>
           <%= f.text_area :description, class: "form-control" %>
         </div>
-        <%= f.submit t("done"), class: "btn btn-primary pull-right" %>
+        <%= f.submit t("add_category_button"), class: "btn btn-primary pull-right" %>
       <% end %>
     </div>
   </div>
